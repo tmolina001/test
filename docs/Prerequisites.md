@@ -24,3 +24,11 @@ The script needs to connect to HP's servers to check for and download SoftPaqs.
 
 -   **Internet Access:** The machine running the script must have outbound internet access on port 443 (HTTPS) and potentially port 80 (HTTP) and 21 (FTP), as the download mechanism is determined by the HPCMSL tool.
 -   **Firewall Configuration:** If you are in an environment with a restrictive firewall, you will need to ensure that the script is allowed to communicate with HP's update servers. The specific URLs and IP addresses are managed by HP and may change. You may need to monitor network traffic from the script's execution to identify the specific hostnames (e.g., `ftp.hp.com`, `hpia.hpcloud.hp.com`, etc.) that need to be whitelisted in your firewall.
+
+## 4. Permissions
+
+The user or system account running this script requires specific permissions to function correctly.
+
+-   **SCCM Security Role:** The account needs a security role in Configuration Manager with permissions to create, modify, and read Packages, Programs, and Distribution Point Groups. A role like **Application Administrator** might be sufficient, but it's best to create a custom role with the minimum required permissions for this task.
+-   **UNC Share Permissions:** The account must have **Read and Write** permissions to the Package Source Path you provide as a parameter. This is where the script will download and store the driver source files.
+-   **Local Administrator Rights:** It is highly recommended to run the PowerShell session with elevated (Run as Administrator) privileges, especially if the script needs to interact with system-level components or install modules.
