@@ -13,10 +13,10 @@ The SCCM PowerShell module is required to connect to your site and manage packag
 
 HPCMSL is the HP-provided PowerShell library used to query for and download driver and firmware SoftPaqs.
 
--   **Requirement:** You must download and install this library from HP's official source.
--   **Download Link:** [HP Client Management Solutions](https://www.hp.com/us-en/solutions/client-management-solutions.html) (Look for the HP Client Management Script Library download).
+-   **Official Source:** All documentation and the installer can be found at the [HP Client Management Solutions Portal](https://www.hp.com/us-en/solutions/client-management-solutions.html). From there, you can navigate to the "HP Client Management Script Library" section for the download and a link to the official documentation.
+-   **Requirement:** You must download and install this library from the portal linked above.
 -   **Installation:** Run the downloaded `.exe` installer.
--   **Verification:** After installation, open a PowerShell console and run `Get-Module -Name HP.CMSL -ListAvailable`. If the module is listed, the installation was successful. Note that the module name `HP.CMSL` is an assumption and may be different.
+-   **Verification:** After installation, open a PowerShell console and run `Get-Module -Name HP.CMSL -ListAvailable`. If the module is listed, the installation was successful. Note that the module name (`HP.CMSL`) is an assumption and may be different.
 
 ## 3. Network Requirements
 
