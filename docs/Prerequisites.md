@@ -17,3 +17,10 @@ HPCMSL is the HP-provided PowerShell library used to query for and download driv
 -   **Download Link:** [HP Client Management Solutions](https://www.hp.com/us-en/solutions/client-management-solutions.html) (Look for the HP Client Management Script Library download).
 -   **Installation:** Run the downloaded `.exe` installer.
 -   **Verification:** After installation, open a PowerShell console and run `Get-Module -Name HP.CMSL -ListAvailable`. If the module is listed, the installation was successful. Note that the module name `HP.CMSL` is an assumption and may be different.
+
+## 3. Network Requirements
+
+The script needs to connect to HP's servers to check for and download SoftPaqs.
+
+-   **Internet Access:** The machine running the script must have outbound internet access on port 443 (HTTPS) and potentially port 80 (HTTP) and 21 (FTP), as the download mechanism is determined by the HPCMSL tool.
+-   **Firewall Configuration:** If you are in an environment with a restrictive firewall, you will need to ensure that the script is allowed to communicate with HP's update servers. The specific URLs and IP addresses are managed by HP and may change. You may need to monitor network traffic from the script's execution to identify the specific hostnames (e.g., `ftp.hp.com`, `hpia.hpcloud.hp.com`, etc.) that need to be whitelisted in your firewall.
